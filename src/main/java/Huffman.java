@@ -49,8 +49,20 @@ public class Huffman {
             huffmanCodes.put(leaf.getCharacter(), code);
             return;
         }
-        generateHuffmanCodes(node.getLeftNode(), code.concat("0"));
-        generateHuffmanCodes(node.getRightNode(), code.concat("1"));
+        if (node.getLeftNode().getProbability() < node.getRightNode().getProbability()) {
+            generateHuffmanCodes(node.getLeftNode(), code.concat("0"));
+            generateHuffmanCodes(node.getRightNode(), code.concat("1"));
+        }
+        else if (node.getLeftNode().getProbability() > node.getRightNode().getProbability()) {
+            generateHuffmanCodes(node.getLeftNode(), code.concat("1"));
+            generateHuffmanCodes(node.getRightNode(), code.concat("0"));
+        } else if (node.getLeftNode().getCharacter().compareTo(node.getRightNode().getCharacter()) > 0) {
+            generateHuffmanCodes(node.getLeftNode(), code.concat("1"));
+            generateHuffmanCodes(node.getRightNode(), code.concat("0"));
+        } else {
+            generateHuffmanCodes(node.getLeftNode(), code.concat("0"));
+            generateHuffmanCodes(node.getRightNode(), code.concat("1"));
+        }
     }
 
     private String getEncodedText() {
