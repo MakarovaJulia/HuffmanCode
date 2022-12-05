@@ -6,14 +6,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
 
-        // a b c d e
+        // abcde
         // 0,1 0,2 0,3 0,1 0,3
         Scanner scanner = new Scanner(System.in);
 
-        String[] word = scanner.nextLine().split(" ");
+        String[] word = scanner.nextLine().split("");
         System.out.println(Arrays.toString(word));
 
-        String[] alphabet = scanner.nextLine().split(" ");
+
+        String[] alphabet = scanner.nextLine().split("");
         System.out.println(Arrays.toString(alphabet));
 
         List<Double> probabilities = new ArrayList<>();
