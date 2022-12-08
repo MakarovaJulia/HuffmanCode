@@ -15,7 +15,8 @@ public class Main {
 
 
         String[] alphabet = scanner.nextLine().split("");
-        System.out.println(Arrays.toString(alphabet));
+        Arrays.sort(alphabet);
+        //System.out.println(Arrays.toString(alphabet));
 
         List<Double> probabilities = new ArrayList<>();
 
